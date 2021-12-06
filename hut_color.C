@@ -115,17 +115,6 @@ void main(){
 	draw_line(150, 180, 180, 250);
 	line(250, 180, 220, 250);
 
-	// Side Lines /*
-	//draw_line(250, 180, 310, 220);
-	//draw_line(310, 180, 310, 220);
-	//draw_line(310, 260, 310, 300);
-	//line(420, 180, 360, 220);
-	//draw_line(360, 180, 360, 220);
-	//draw_line(360, 260, 360, 300);
-	//line(310, 260, 250, 300);
-	//draw_line(360, 260, 420, 300);
-	//boundary_fill(255, 182, 5, 15);
-
 	// gate
 	// vertical Lines
 	draw_line(199, 250, 199, 300);
