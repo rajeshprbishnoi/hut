@@ -6,7 +6,6 @@
 void draw_line(int, int, int, int);
 void draw_rectangle(int, int, int, int);
 void draw_circle(int, int, int);
-void boundary_fill(int, int, int, int);
 
 void draw_rectangle(int x1, int y1, int x2, int y2){
 	draw_line(x1, y1, x2, y1);
@@ -74,46 +73,59 @@ void draw_line(int x1, int y1, int x2, int y2){
 
 void main(){
 	int gd = DETECT, gm;
-	initgraph(&gd, &gm, "C:\\TURBOC3\\BGI");
-	 // First rectangle
-	draw_rectangle(150, 180, 250, 300);
-	// second rectangle
-	draw_rectangle(250, 180, 420, 300);
-	// Door
-	draw_rectangle(180, 250, 220, 300);
-	// window
-	draw_rectangle(310, 220, 360, 260);
+	initgraph(&gd, &gm, "C:\\TC\\BGI");
 
-	// Roof
+	 // front rectangle
+	draw_rectangle(150, 180, 250, 300);
+	// side rectangle
+	draw_rectangle(250, 180, 420, 300);
+	// Door rectangle
+	draw_rectangle(180, 250, 220, 300);
+	// windows rectangle
+	draw_rectangle(280, 220, 390, 260);
+    draw_line(335, 220, 335, 260);
+    draw_circle(325, 240, 3);
+    draw_circle(345, 240, 3);
+    draw_line(325, 240, 345, 240);
+    
+	// Roof of hut
 	line(200, 100, 150, 180);
 	draw_line(200, 100, 250, 180);
 	draw_line(200, 100, 370, 100);
 	draw_line(370, 100, 420, 180);
-	// Roof circle
+	
+	//Roof sections
+	draw_line(225, 140, 395, 140);
+	draw_line(285, 100, 335, 180);
+	draw_line(243, 100, 293, 180);
+	draw_line(327, 100, 377, 180);
+    
+    // ventilator
 	draw_circle(200, 150, 10);
 
-	// gate
-	// vertical Lines
+    // front horizontal lines
+	draw_line(150, 200, 250, 200);
+	draw_line(150, 225, 250, 225);
+	// front angular lines
+	draw_line(150, 225, 180, 250);
+	line(250, 225, 220, 250);
+	
+	// door vertical lines
 	draw_line(199, 250, 199, 300);
 	draw_line(201, 250, 201, 300);
-	// Horizontal Lines
-	draw_line(180, 260, 220, 260);
-	draw_line(180, 262, 220, 262);
-	draw_line(180, 274, 220, 274);
-	draw_line(180, 276, 220, 276);
+	// door latch
 	draw_circle(207, 283, 3);
-	draw_line(180, 290, 220, 290);
-	draw_line(180, 292, 220, 292);
-
-	// window gate
-
-	draw_line(310, 220, 325, 227);
-	draw_line(325, 227, 325, 260);
-	draw_circle(318, 242, 3);
-	line(360, 220, 345, 227);
-	draw_line(345, 227, 345, 260);
-	draw_circle(352, 242, 3);
-
+	
+	// Side angular lines 
+	draw_line(250,180, 280, 220);
+	line(280, 260, 250, 300);
+	line(420, 180, 390, 220);
+	draw_line(390, 260, 420, 300);
+    
+    draw_rectangle(293, 180, 377, 200);
+    draw_rectangle(293, 280, 377, 300);
+    
+	
 	getch();
 	closegraph();
 }
